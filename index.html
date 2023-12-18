@@ -58,8 +58,12 @@
                 alert("Vui lòng nhập đúng giá trị nồng độ và thể tích nước.");
                 return;
             }
+
+            if (initialConcentration < desiredConcentration) {
+                alert("Nồng độ ban đầu phải cao hơn nồng độ mong muốn!");
+                return;
+            }
             
-            var a = initialConcentration * waterVolume / desiredConcentration
             var additionalWater = initialConcentration * waterVolume / desiredConcentration - waterVolume
 
             document.getElementById('result').innerText = "Cần thêm " + additionalWater.toFixed(2) + " lít nước để pha loãng.";
